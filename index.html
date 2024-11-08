@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Incluye la biblioteca de íconos Font Awesome -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Todo TasksList</h1>
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Agregar una nueva tarea">
+      <button id="addTaskBtn">Añadir</button>
+    </div>
+
+    <!-- Barra de filtros para ver tareas por estado -->
+    <div class="filter-group">
+      <button id="showAllBtn" class="filter-btn active">Todas</button>
+      <button id="showPendingBtn" class="filter-btn">Pendientes</button>
+      <button id="showCompletedBtn" class="filter-btn">Completadas</button>
+    </div>
+
+    <ul id="taskList" class="list-group"></ul>
+
+    <!-- Opciones para limpiar tareas y enviar por correo -->
+    <div class="options">
+      <button id="clearTasksBtn"><i class="fas fa-trash-alt"></i> Limpiar Tareas</button>
+      <button id="sendEmailBtn"><i class="fas fa-envelope"></i> Enviar por Correo</button>
+    </div>
+  </div>
+
+  <!-- Enlaza el JavaScript compilado -->
+  <script src="app.js"></script>
+</body>
+</html>

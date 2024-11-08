@@ -1,0 +1,225 @@
+/* General */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 20px;
+}
+
+h1 {
+  color: #333333;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Input y botón de añadir */
+.input-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Permite que los elementos se acomoden en pantallas pequeñas */
+}
+
+#taskInput {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  max-width: calc(100% - 110px); /* Ajusta el input cuando el botón está a la derecha */
+}
+
+#taskInput:focus {
+  border-color: #5a67d8;
+}
+
+#addTaskBtn {
+  padding: 10px 20px;
+  background-color: #5a67d8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#addTaskBtn:hover {
+  background-color: #4c51bf;
+}
+
+/* Barra de filtros */
+.filter-group {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap; /* Asegura que los filtros se acomoden en pantallas pequeñas */
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  background-color: #e2e8f0;
+  color: #4a5568;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 5px;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background-color: #5a67d8;
+  color: #ffffff;
+}
+
+/* Lista de tareas */
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333333;
+  transition: background-color 0.3s;
+}
+
+.list-group-item:hover {
+  background-color: #cbd5e0;
+}
+
+/* Tareas completadas - efecto de tachado con fibra gris */
+.list-group-item.completed {
+  background-color: #f7fafc;
+  color: #718096;
+  text-decoration: line-through;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #a0aec0;
+}
+
+/* Botón de eliminar con ícono de cruz */
+.btn-danger {
+  background: transparent;
+  border: none;
+  color: #718096;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.btn-danger:hover {
+  color: #e53e3e;
+}
+
+/* Botones de limpiar tareas y enviar por correo */
+.options {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#clearTasksBtn,
+#sendEmailBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 48%;
+  padding: 10px;
+  background-color: #edf2f7;
+  color: #4a5568;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#clearTasksBtn:hover {
+  background-color: #f56565;
+  color: #ffffff;
+}
+
+#sendEmailBtn:hover {
+  background-color: #4299e1;
+  color: #ffffff;
+}
+
+/* Media Queries para adaptarse a pantallas más pequeñas */
+@media (max-width: 768px) {
+  .input-group {
+    flex-direction: column; /* Los elementos del input se apilan */
+  }
+
+  #taskInput {
+    max-width: 100%; /* El input ocupa todo el ancho disponible */
+  }
+
+  #addTaskBtn {
+    width: 100%; /* El botón ocupa todo el ancho disponible */
+  }
+
+  .filter-group {
+    flex-direction: column; /* Los filtros se apilan verticalmente */
+    gap: 10px;
+  }
+
+  .filter-btn {
+    width: 100%; /* Los botones de filtro ocupan todo el ancho */
+  }
+
+  .options {
+    flex-direction: column; /* Los botones de opciones se apilan en pantallas pequeñas */
+    width: 100%;
+  }
+
+  #clearTasksBtn, #sendEmailBtn {
+    width: 100%; /* Los botones ocupan todo el ancho disponible */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px; /* Menos padding en pantallas pequeñas */
+  }
+
+  h1 {
+    font-size: 20px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+  }
+
+  .list-group-item {
+    font-size: 14px; /* Fuente más pequeña en tareas */
+  }
+}
